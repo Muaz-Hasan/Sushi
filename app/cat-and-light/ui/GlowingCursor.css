@@ -1,0 +1,12 @@
+.glowing-cursor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  pointer-events: none; /* Make sure it's not interactable */
+  transform: translate(-50%, -50%); /* Center the point */
+  transition: transform 0.05s ease-out;
+  z-index: 9999;
+}

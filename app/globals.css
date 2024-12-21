@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-text {
+  @apply font-extrabold text-nowrap;
+  font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.high-text {
+  @apply font-extrabold text-nowrap;
+  font-size: clamp(2rem, 6vw, 5rem);
+}
+
+.soldier-text {
+  @apply font-extrabold text-wrap;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+  height: 100vh; /* Adjust height to your preference */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  top: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), pink);
+}
+
+.logos:after {
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), pink);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  animation: 5s slide infinite linear;
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center;
+}
+
+.logos-slide img {
+  margin: 40px 0; /* Adjust vertical spacing between images */
+}
+
+/* Door animation */
+.page {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+}
+
+.door {
+  width: 50%;
+  height: 100%;
+  background-color: #f0e4d7; /* Light color to mimic shoji paper */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border: 15px solid #8b5e3c; /* Thicker outer border */
+}
+
+.grid-stripe {
+  flex-basis: 25%;
+  height: 33.33%;
+  box-sizing: border-box;
+  border: 5px solid #8b5e3c;
+}
+
+.left-door {
+  transform: translateX(0);
+  animation: slide-left 2s ease forwards;
+}
+
+.right-door {
+  transform: translateX(0);
+  animation: slide-right 2s ease forwards;
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.content {
+  position: relative;
+  opacity: 0;
+  animation: fade-in 1.5s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.scroll-indicator {
+  position: relative;
+  width: 6rem;
+  height: 4rem;
+}
+
+.scroll-indicator::before {
+  content: "╲╱";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 800;
+  color: black;
+  opacity: 0.8;
+  animation: bounce 1s ease infinite;
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 3rem;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translate(-50%, -50%);
+  }
+}
