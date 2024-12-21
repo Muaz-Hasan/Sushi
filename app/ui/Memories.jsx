@@ -122,7 +122,7 @@ export default function Memories() {
               some more cheesy text here <br />
             </p>
             <Link
-              href="our-timeline"
+              href="pew"
               className="z-20 px-3 text-center text-lg sm:text-xl py-2 mt-4 bg-pink-200 border-2 hover:scale-105 transition-transform duration-300 ease-in-out border-pink-300 rounded-2xl cursor-pointer"
             >
               Another page

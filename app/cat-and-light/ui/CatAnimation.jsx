@@ -103,7 +103,7 @@ const CatAnimation = () => {
             <TiHome size={24} />
           </Link>
           <Link
-            href="our-timeline"
+            href="pew"
             className={`p-2 bg-white rounded-full text-black text-base font-bold transition-all duration-300 ease-in-out inline-block hover:bg-neutral-300`}
           >
             <FaAngleLeft size={24} />
